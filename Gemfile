@@ -16,6 +16,7 @@ gem 'paperclip', '~> 6.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'devise', '~> 4.7', '>= 4.7.2'
+gem 'jquery-rails', '~> 4.4'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
