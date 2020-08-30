@@ -1,0 +1,32 @@
+= simple_form_for @memory, html: { multipart: true } do |f|
+	- if @memory.errors.any?
+		#errors
+			%p
+				= @memory.errors.count
+				Prevented this memory from saving.
+			%ul
+				- @memory.errors.full_messages.each do |msg|
+					%li= msg
+	.panel-body
+		= f.input :title, input_html: { class: 'form-control' }
+		= f.input :description, input_html: { class: 'form-control' }
+		= f.input :image, input_html: { class: 'form-control' }
+
+		.row
+			.col-md-6
+				%h3 highlights
+				#highlights
+					= f.simple_fields_for :highlights do |highlight|
+						= render 'highlight_fields', f: highlight
+					.links
+						= link_to_add_association 'Add Highlight', f, :highlights, class: "btn btn-default add-button"
+
+			.col-md-6
+				%h3 Trip Notes
+				#tripnotes
+					= f.simple_fields_for :tripnotes do |tripnote|
+						= render 'tripnote_fields', f: tripnote
+					.links
+						= link_to_add_association 'Add Note', f, :tripnotes, class: "btn btn-default add-button"
+
+	= f.button :submit, class: "btn btn-primary"

@@ -1,0 +1,28 @@
+.main_content
+  #memory_top.row
+    .col-md-4
+      = image_tag @memory.image.url(:medium), class: "memory_image"
+    .col-md-8
+      #memory_info
+        %h1= @memory.title
+        %p.description= @memory.description
+  .row
+    .col-md-6
+      #highlights
+        %h2 Highlights
+        %ul
+          - @memory.highlights.each do |highlight|
+            %li= highlight.bullet
+
+    .col-md-6
+      #tripnotes
+        %h2 Trip Notes
+        %ul
+          - @memory.tripnotes.each do |tripnote|
+            %li= tripnote.detail
+
+  .row
+    .col-md-12
+      = link_to "Back", root_path, class: "btn btn-default"
+      = link_to "Edit", edit_memory_path, class: "btn btn-default"
+      = link_to "Delete", memory_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"

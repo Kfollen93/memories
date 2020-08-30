@@ -1,0 +1,9 @@
+- @memory.each_slice(3) do |memories|
+  .row
+    - memories.each do |memory|
+      .col-md-4
+        .memory
+          .image_wrapper
+            = link_to memory do
+              = image_tag memory.image.url(:medium)
+          %h2= link_to memory.title, memory
