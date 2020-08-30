@@ -3,7 +3,7 @@ class MemoriesController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
-        @memory = Memory.all.order("created_at DESC")
+        @memory = Memory.all.order("created_at ASC")
     end
 
     def show
@@ -35,6 +35,7 @@ class MemoriesController < ApplicationController
     end
 
     def destroy
+        @memory = current_user.memories.find(params[:id])
         @memory.destroy
         redirect_to root_path, notice: "Successfully deleted memory."
     end

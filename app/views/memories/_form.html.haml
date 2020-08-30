@@ -16,7 +16,7 @@
 			.col-md-6
 				%h3 Highlights
 				#highlights
-					= f.simple_fields_for :highlights do |highlight|
+					= f.simple_fields_for :highlights, Highlight.new do |highlight|
 						= render 'highlight_fields', f: highlight
 					.links
 						= link_to_add_association 'Add Highlight', f, :highlights, class: "btn btn-default add-button"
@@ -24,7 +24,7 @@
 			.col-md-6
 				%h3 Trip Notes
 				#tripnotes
-					= f.simple_fields_for :tripnotes do |tripnote|
+					= f.simple_fields_for :tripnotes, Tripnote.new do |tripnote|
 						= render 'tripnote_fields', f: tripnote
 					.links
 						= link_to_add_association 'Add Note', f, :tripnotes, class: "btn btn-default add-button"
