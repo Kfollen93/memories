@@ -1,5 +1,6 @@
 class MemoriesController < ApplicationController
     before_action :find_memory, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, except: [:index, :show]
 
     def index
         @memory = Memory.all.order("created_at DESC")
@@ -9,11 +10,11 @@ class MemoriesController < ApplicationController
     end
 
     def new
-        @memory = Memory.new
+        @memory = current_user.memories.build
     end
 
     def create
-        @memory = Memory.new(memory_params)
+        @memory = current_user.memories.build(memory_params)
 
         if @memory.save
             redirect_to @memory, notice: "Successfully stored new memory."
