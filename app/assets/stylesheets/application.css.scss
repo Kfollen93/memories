@@ -23,10 +23,17 @@
 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 }
 
-$red: #5e30df;
+$wordscolor: #5183a0;
 
 body {
-	background: rgb(235, 238, 243);
+	background: rgba(172,220,236,1);
+	background: -moz-linear-gradient(left, rgba(172,220,236,1) 0%, rgba(72,200,230,1) 48%, rgba(33,192,228,1) 67%, rgba(177,222,236,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(172,220,236,1)), color-stop(48%, rgba(72,200,230,1)), color-stop(67%, rgba(33,192,228,1)), color-stop(100%, rgba(177,222,236,1)));
+	background: -webkit-linear-gradient(left, rgba(172,220,236,1) 0%, rgba(72,200,230,1) 48%, rgba(33,192,228,1) 67%, rgba(177,222,236,1) 100%);
+	background: -o-linear-gradient(left, rgba(172,220,236,1) 0%, rgba(72,200,230,1) 48%, rgba(33,192,228,1) 67%, rgba(177,222,236,1) 100%);
+	background: -ms-linear-gradient(left, rgba(172,220,236,1) 0%, rgba(72,200,230,1) 48%, rgba(33,192,228,1) 67%, rgba(177,222,236,1) 100%);
+	background: linear-gradient(to right, rgba(172,220,236,1) 0%, rgba(72,200,230,1) 48%, rgba(33,192,228,1) 67%, rgba(177,222,236,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#acdcec', endColorstr='#b1deec', GradientType=1 );
 }
 
 .main_content {
@@ -53,13 +60,13 @@ body {
 		font-weight: bold;
 		font-size: 25px;
 		a {
-			color: $red;
+			color: #78b8dd;
 		}
 	}
 }
 
 .memory {
-	background: rgb(255, 255, 255);
+	background: #f8f7f7;
 	border-radius: 5px;
 	margin-bottom: 40px;
 	@include box-shadow;
@@ -85,7 +92,8 @@ body {
 		font-weight: normal;
 		line-height: 1.5;
 		a {
-			color: $red;
+			font-weight: bold;
+			color: $wordscolor;
 		}
 	}
 }
@@ -100,6 +108,7 @@ body {
 	min-height: 360px;
 	border-radius: 5px;
 	padding: 2em 8%;
+	color: rgb(0, 0, 0);
 }
 
 .memory_image {
@@ -112,10 +121,10 @@ body {
 	h1 {
 		font-size: 36px;
 		font-weight: normal;
-		color: $red;
+		color: #78b8dd;
 	}
 	.description {
-		color: #8A8A8A;
+		color: #78b8dd;
 		font-size: 20px;
 	}
 }
@@ -126,7 +135,7 @@ body {
 		padding-left: 18px;
 		li {
 			padding: 1em 0;
-			border-bottom: 1px solid #EAEAEA;
+			border-bottom: 1px solid #0051ff;
 		}
 	}
 }
