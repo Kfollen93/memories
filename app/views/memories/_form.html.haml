@@ -3,7 +3,7 @@
 		#errors
 			%p
 				= @memory.errors.count
-				Prevented this memory from saving.
+				Prevented this memory from saving
 			%ul
 				- @memory.errors.full_messages.each do |msg|
 					%li= msg
@@ -16,17 +16,17 @@
 			.col-md-6
 				%h3 Highlights
 				#highlights
-					= f.simple_fields_for :highlights, Highlight.new do |highlight|
+					= f.simple_fields_for :highlights do |highlight|
 						= render 'highlight_fields', f: highlight
 					.links
-						= link_to_add_association 'Add Highlight', f, :highlights, class: "btn btn-default add-button"
+						= link_to_add_association 'Add Bullet', f, :highlights, class: "btn btn-default add-button"
 
 			.col-md-6
 				%h3 Trip Notes
 				#tripnotes
-					= f.simple_fields_for :tripnotes, Tripnote.new do |tripnote|
+					= f.simple_fields_for :tripnotes do |tripnote|
 						= render 'tripnote_fields', f: tripnote
 					.links
-						= link_to_add_association 'Add Note', f, :tripnotes, class: "btn btn-default add-button"
+						= link_to_add_association 'Add Detail', f, :tripnotes, class: "btn btn-default add-button"
 
 	= f.button :submit, class: "btn btn-primary"
