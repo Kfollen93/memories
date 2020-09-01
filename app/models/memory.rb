@@ -1,8 +1,8 @@
 class Memory < ApplicationRecord
     belongs_to :user
     
-    has_many :highlights
-    has_many :tripnotes
+    has_many :highlights, dependent: :destroy
+    has_many :tripnotes, dependent: :destroy
 
     accepts_nested_attributes_for :highlights,
                                    reject_if: proc { |attributes| attributes['bullet'].blank? },

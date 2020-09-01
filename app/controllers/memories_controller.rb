@@ -6,6 +6,9 @@ class MemoriesController < ApplicationController
         @memory = Memory.all.order("created_at ASC")
     end
 
+    def about_me
+    end
+
     def show
     end
 
