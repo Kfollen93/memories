@@ -26,7 +26,7 @@
 
   .row
     .col-md-12
-      = link_to "Back", root_path, class: "btn btn-default"
+      = link_to "Back", memories_path, class: "btn btn-default"
       - if current_user && current_user == @memory.user
         = link_to "Edit", edit_memory_path, class: "btn btn-default"
         = link_to "Delete", memory_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
