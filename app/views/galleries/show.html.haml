@@ -1,0 +1,19 @@
+.main_content
+  #memory_top.row
+    .col-md-4
+      = image_tag @gallery.image.url(:medium), class: "memory_image"
+    .col-md-8
+      #memory_info
+        %h1= @gallery.title
+        %p.description= @gallery.description
+        %p
+          Submitted by
+          = @gallery.user.email
+
+  .row
+    .col-md-12
+      = link_to "Back", galleries_path, class: "btn btn-default"
+      - if current_user && current_user == @gallery.user
+        = link_to "Edit", edit_gallery_path, class: "btn btn-default"
+        = link_to "Delete", gallery_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+        = link_to "View Memories", gallery_memories_path(@gallery), class: "btn btn-default"

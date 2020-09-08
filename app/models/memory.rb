@@ -1,5 +1,6 @@
 class Memory < ApplicationRecord
     belongs_to :user
+    belongs_to :gallery
     
     has_many :highlights, dependent: :destroy
     has_many :tripnotes, dependent: :destroy

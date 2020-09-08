@@ -1,6 +1,6 @@
 class MemoriesController < ApplicationController
     before_action :find_memory, only: [:show, :edit, :update, :destroy]
-    before_action :memory_belongs_to_user?, except: [:welcome, :index, :new]
+    before_action :memory_belongs_to_user?, except: [:welcome, :index, :new, :create]
     before_action :authenticate_user!, except: [:welcome]
 
     def index

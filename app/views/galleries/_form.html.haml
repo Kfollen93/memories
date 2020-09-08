@@ -1,0 +1,15 @@
+= simple_form_for [@gallery, @memory], html: { multipart: true } do |f|
+	- if @gallery.errors.any?
+		#errors
+			%p
+				= @gallery.errors.count
+				Prevented this gallery from saving
+			%ul
+				- @gallery.errors.full_messages.each do |msg|
+					%li= msg
+	.panel-body
+		= f.input :title, input_html: { class: 'form-control' }
+		= f.input :description, input_html: { class: 'form-control' }
+		= f.file_field :image, input_html: { class: 'form-control' }
+
+	= f.button :submit, class: "btn btn-primary"

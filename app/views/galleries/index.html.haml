@@ -1,0 +1,9 @@
+- @gallery.each_slice(3) do |galleries|
+  .row
+    - galleries.each do |gallery|
+      .col-md-4
+        .memory
+          .image_wrapper
+            = link_to gallery do
+              = image_tag gallery.image.url(:medium)
+          %h2= link_to gallery.title, gallery
