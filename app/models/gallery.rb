@@ -1,7 +1,7 @@
 class Gallery < ApplicationRecord
     belongs_to :user
     
-   # has_many :memories, dependent: :destroy
+    has_many :memories, dependent: :destroy
 
     validates :title, :description, :image, presence: true
     
