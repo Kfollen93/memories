@@ -1,6 +1,6 @@
 class MemoriesController < ApplicationController
     before_action :find_memory, only: [:show, :edit, :update, :destroy]
-    before_action :memory_belongs_to_user?, except: [:welcome, :index]
+    before_action :memory_belongs_to_user?, except: [:welcome, :index, :new]
     before_action :authenticate_user!, except: [:welcome]
 
     def index
@@ -57,16 +57,16 @@ class MemoriesController < ApplicationController
         @memory = Memory.find(params[:id])
 
         if @memory == nil
-            redirect_to root_path
+            redirect_to memories_path
         end
 
         rescue ActiveRecord::RecordNotFound
-        redirect_to root_path, :flash => { :error => "Record not found." }
+        redirect_to memories_path, :flash => { :error => "Record not found." }
     end
 
     def memory_belongs_to_user?
         if current_user.id != @memory.user_id
-          redirect_to root_path
+          redirect_to memories_path, :flash => { :error => "Record not found." }
         else
           find_memory
         end
