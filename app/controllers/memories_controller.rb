@@ -17,11 +17,13 @@ class MemoriesController < ApplicationController
     end
 
     def new
-        @memory = current_user.memories.build
+      @memory = current_user.memories.build
+      # @gallery = Gallery.find(params[:gallery_id])
     end
 
     def create
         @memory = current_user.memories.build(memory_params)
+        # @gallery = current_user.gallery_ids.build(gallery_params)
 
         if @memory.save
             redirect_to @memory, notice: "Successfully stored new memory."
@@ -50,13 +52,24 @@ class MemoriesController < ApplicationController
     private
 
     def memory_params
-        params.require(:memory).permit(:title, :description, :image, highlights_attributes: [:id, :bullet, :_destroy], tripnotes_attributes: [:id, :detail, :_destroy])
+        params.require(:memory).permit(:title, :description, :image, :gallery_id, highlights_attributes: [:id, :bullet, :_destroy], tripnotes_attributes: [:id, :detail, :_destroy])
     end
 
     def find_memory
         @memory = Memory.find(params[:gallery_id])
 
         if @memory == nil
+            redirect_to galleries_path
+        end
+
+        rescue ActiveRecord::RecordNotFound
+        redirect_to galleries_path, :flash => { :error => "Record not found." }
+    end
+
+    def find_gallery
+        @gallery = Gallery.find(params[:gallery_id])
+
+        if @gallery == nil
             redirect_to galleries_path
         end
 
