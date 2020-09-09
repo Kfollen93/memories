@@ -1,6 +1,6 @@
 class Memory < ApplicationRecord
     belongs_to :user
-    belongs_to :gallery
+    belongs_to :gallery #  optional: true #ADDED OPTIONAL TRUE AND CAN SAVE MEMORY NOW
     
     has_many :highlights, dependent: :destroy
     has_many :tripnotes, dependent: :destroy

@@ -4,6 +4,6 @@
       .col-md-4
         .memory
           .image_wrapper
-            = link_to memory do
+            = link_to gallery_memories_path do
               = image_tag memory.image.url(:medium)
-          %h2= link_to memory.title, memory
+          %h2= link_to memory.title, gallery_memories_path
