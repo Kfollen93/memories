@@ -1,4 +1,4 @@
-= simple_form_for [@gallery, @memory], html: { multipart: true } do |f|
+= simple_form_for @gallery, html: { multipart: true } do |f|
 	- if @gallery.errors.any?
 		#errors
 			%p

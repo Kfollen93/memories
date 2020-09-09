@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :memories
+  # resources :memories
 
   resources :galleries do
     resources :memories

@@ -44,7 +44,7 @@ class MemoriesController < ApplicationController
     def destroy
         @memory = current_user.memories.find(params[:id])
         @memory.destroy
-        redirect_to memories_path, notice: "Successfully deleted memory."
+        redirect_to galleries_path, notice: "Successfully deleted memory."
     end
 
     private
@@ -54,19 +54,19 @@ class MemoriesController < ApplicationController
     end
 
     def find_memory
-        @memory = Memory.find(params[:id])
+        @memory = Memory.find(params[:gallery_id])
 
         if @memory == nil
-            redirect_to memories_path
+            redirect_to galleries_path
         end
 
         rescue ActiveRecord::RecordNotFound
-        redirect_to memories_path, :flash => { :error => "Record not found." }
+        redirect_to galleries_path, :flash => { :error => "Record not found." }
     end
 
     def memory_belongs_to_user?
         if current_user.id != @memory.user_id
-          redirect_to memories_path, :flash => { :error => "Record not found." }
+          redirect_to galleries_path, :flash => { :error => "Record not found." }
         else
           find_memory
         end
