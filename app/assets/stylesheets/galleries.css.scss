@@ -1,0 +1,83 @@
+// Place all the styles related to the galleries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box-shadow {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+$wordscolor: #5183a0;
+
+.gallery {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; 
+
+	background: #f8f7f7;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	@include box-shadow;
+	.image_wrapper {
+		max-width: 100%;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+	}
+	img {
+		width: 100%;
+		-webkit-transition: all .3s ease-out;
+	    -moz-transition: all .3s ease-out;
+	    -o-transition: all .3s ease-out;
+        transition: all .3s ease-out;
+		&:hover {
+			transform: scale(1.075);
+		}
+	}
+	h2 {
+		padding: 15px 5%;
+		margin: 0;
+		font-size: 20px;
+		font-weight: normal;
+		line-height: 1.5;
+		a {
+			font-weight: bold;
+			color: $wordscolor;
+		}
+	}
+}
+
+#gallery_top {
+	margin-bottom: 50px;
+}
+
+#gallery_info, #highlights, #tripnotes {
+	background: white;
+	@include box-shadow;
+	min-height: 300px;
+	border-radius: 5px;
+	padding: 2em 8%;
+	color: rgb(0, 0, 0);
+}
+
+.gallery_image {
+	max-width: 100%;
+	border-radius: 5px;
+	@include box-shadow;
+}
+
+#gallery_info {
+	h1 {
+		font-size: 36px;
+		font-weight: normal;
+		color: #78b8dd;
+	}
+	.description {
+		color: #78b8dd;
+		font-size: 20px;
+	}
+}

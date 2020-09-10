@@ -1,8 +1,8 @@
-- @gallery.each_slice(3) do |galleries|
+- @gallery.each_slice(1) do |galleries|
   .row
     - galleries.each do |gallery|
-      .col-md-4
-        .memory
+      .col
+        .gallery
           .image_wrapper
             = link_to gallery do
               = image_tag gallery.image.url(:medium)

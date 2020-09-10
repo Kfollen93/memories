@@ -45,7 +45,7 @@ class MemoriesController < ApplicationController
 
     def update
         if @memory.update(memory_params)
-            redirect_to galleries_path
+            redirect_to gallery_memories_path(@gallery)
         else
             render 'edit'
         end
