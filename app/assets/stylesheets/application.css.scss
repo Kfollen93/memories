@@ -86,6 +86,7 @@ body {
 		}
 	}
 	h2 {
+		text-align: center;
 		padding: 15px 5%;
 		margin: 0;
 		font-size: 20px;
@@ -130,6 +131,7 @@ body {
 }
 
 #highlights, #tripnotes {
+	color: #78b8dd;
 	margin-bottom: 50px;
 	ul, ol {
 		padding-left: 18px;
@@ -154,30 +156,4 @@ body {
 }
 .add-button {
 	margin-top: 25px;
-}
-
-.about {
-	font-weight: bold;
-	text-align: center;
-	color: #eaecee;
-	font-size: 45px;
-}
-
-.aboutpara {
-	text-align: center;
-	font-size: 18px;
-}
-
-.authorpic {
-	img {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 40%;
-	}
-	
-}
-
-.niletag{
-	text-align: center;
 }

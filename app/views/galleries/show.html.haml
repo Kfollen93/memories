@@ -1,9 +1,9 @@
 .main_content
-  #memory_top.row
+  #gallery_top.row
     .col-md-4
-      = image_tag @gallery.image.url(:medium), class: "memory_image"
+      = image_tag @gallery.image.url(:medium), class: "gallery_image"
     .col-md-8
-      #memory_info
+      #gallery_info
         %h1= @gallery.title
         %p.description= @gallery.description
         %p
