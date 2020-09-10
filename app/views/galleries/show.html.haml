@@ -7,8 +7,8 @@
         %h1= @gallery.title
         %p.description= @gallery.description
         %p
-          Submitted by
-          = @gallery.user.email
+          Created:
+          = @gallery.created_at.strftime("%B %d %Y, %l:%M%P")
 
   .row
     .col-md-12
