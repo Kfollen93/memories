@@ -5,7 +5,6 @@ class MemoriesController < ApplicationController
     before_action :authenticate_user!, except: [:welcome]
 
     def index
-       # @memory = current_user.memories.order("created_at ASC")
        @memory = @gallery.memories
     end
     
@@ -19,18 +18,10 @@ class MemoriesController < ApplicationController
     end
 
     def new
-      #@memory = current_user.memories.build
-      #@gallery = Gallery.find(params[:gallery_id])
-
       @memory = @gallery.memories.build
     end
 
     def create
-        #@memory = current_user.memories.build(memory_params)
-        #@gallery = current_user.galleries.build(gallery_params)
-        #@gallery = Gallery.find(params[:gallery_id])
-
-        #@memory = @gallery.memories.build(memory_params)
         @memory = @gallery.memories.build(memory_params.merge(user_id: current_user.id))
 
         if @memory.save
@@ -59,11 +50,9 @@ class MemoriesController < ApplicationController
 
     private
 
-    #new
     def get_gallery
         @gallery = current_user.galleries.find(params[:gallery_id])
       end
-    # test
 
     def memory_params
         params.require(:memory).permit(:title, :description, :image, :gallery_id, highlights_attributes: [:id, :bullet, :_destroy], tripnotes_attributes: [:id, :detail, :_destroy])
@@ -74,8 +63,6 @@ class MemoriesController < ApplicationController
     end
 
     def find_memory
-        #@memory = Memory.find(params[:gallery_id])
-        #new
         @memory = @gallery.memories.find(params[:id])
 
         if @memory == nil
