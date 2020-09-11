@@ -61,11 +61,6 @@ Lastly, maybe my other favorite gem at this moment, <a href="https://rubygems.or
 - <a href="https://rubygems.org/gems/jquery-rails">jquery-rails</a>
 - <a href="https://rubygems.org/gems/simple_form">simple_form</a>
 
-
-### Future Plans
-
- I love traveling, and having a digital photo gallery website that I created is something that I would actually use. Therefore, it is possible in the future that I will fully deploy and host this website. There are a few things that I need to do first such as switching from SQLite3 to PostgreSQL in order to be able to deploy to Heroku. In addition to this, I would want to remove the no longer supported Paperclip gem, and implement Rails' Active Storage in connection with Amazon's S3 as a storage bucket for the pictures.
-
 ## How the Memory Website Works:
 
 1. Begin by signing up if you are new, or sign in if you are a returning user.
@@ -89,3 +84,7 @@ Lastly, maybe my other favorite gem at this moment, <a href="https://rubygems.or
 6. You can create several galleries and store several memories within each!
 <img src="app/assets/images/Readme/multiple_galleries.png" width="550" />
 <img src="app/assets/images/Readme/multiple_memories.png" width="550" />
+
+### Future Plans
+
+ I love traveling, and having a digital photo gallery website that I created is something that I would actually use. Therefore, it is possible in the future that I will fully deploy and host this website. There are a few things that I need to do first such as switching from SQLite3 to PostgreSQL in order to be able to deploy to Heroku. In addition to this, I would want to remove the no longer supported Paperclip gem, and implement Rails' Active Storage in connection with Amazon's S3 as a storage bucket for the pictures.
