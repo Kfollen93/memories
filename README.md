@@ -14,12 +14,12 @@
 
 <img src="app/assets/images/Readme/gallery_cover.png" width="450" />
 
-4. Now, go ahead create some memories within your gallery.
+4. Now, go ahead and create some memories within your gallery.
 <img src="app/assets/images/Readme/creating_memory.png" width="450" />
 
 5. This is how the memory looks once finished.
 <img src="app/assets/images/Readme/memory.png" width="450" />
 
 6. You can create several galleries and store several memories within each!
-<img src="app/assets/images/Readme/multiple_galleries.png" width="450" /><br>
+<img src="app/assets/images/Readme/multiple_galleries.png" width="450" />
 <img src="app/assets/images/Readme/multiple_memories.png" width="450" />
