@@ -6,27 +6,27 @@ A website to be used as a digital photo gallery.
 
 Ensure you have both Ruby and Rails installed on your system.
 
-$ ruby -v
-$ rails -v
+`$ ruby -v`<br>
+`$ rails -v`
 
 If you are able to see the versions of each you can clone the git repository, otherwise you will need to read a set up guide for Ruby on Rails.
 
 Go to a folder on your system where you want the project to be and copy/paste:
 
-$ git clone git@github.com:Kfollen93/memories.git
+`$ git clone git@github.com:Kfollen93/memories.git`
 
 Install all the gems/dependencies with:
 
-$ bundle install
+`$ bundle install`
 
 Create the database and migrate:
 
-$ rake db:create
-$ rake db:migrate
+`$ rake db:create`<br>
+`$ rake db:migrate`
 
 Enter:
 
-$ rails server
+`$ rails server`
 
 This will start a local server for you to access and use the website locally.
 
